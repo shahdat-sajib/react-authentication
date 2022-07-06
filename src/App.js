@@ -5,9 +5,20 @@ import Dashboard from './components/Dashboard/Dashboard';
 import Preferences from './components/Preferences/Preferences';
 import Login from './components/Login/Login';
 
+function setToken(userToken) {
+  sessionStorage.setItem('token', JSON.stringify(userToken));
+}
+function getToken() {
+  const tokenString = sessionStorage.getItem('token');
+  const userToken = JSON.parse(tokenString);
+  return userToken?.token
+}
+
+
 function App() {
+  
   //for handle token
-  const [token, setToken] = useState();
+  const token = getToken();
 
   //show login component when token exist
   if(!token) {
