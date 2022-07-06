@@ -10,7 +10,7 @@ async function loginUser(credentials) {
         },
         body: JSON.stringify(credentials)
     })
-        .then(data => data.json())
+        .then(data => data.json())       
 }
 
 export default function Login({ setToken }) {
@@ -24,6 +24,8 @@ export default function Login({ setToken }) {
             password
         });
         setToken(token);
+        //for console the token
+        console.log(token)
     }
 
     return (
