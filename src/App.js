@@ -1,10 +1,11 @@
-
+import React, { useState } from 'react';
 import './App.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Dashboard from './components/Dashboard/Dashboard';
 import Preferences from './components/Preferences/Preferences';
 
 function App() {
+  const [token, setToken] = useState();
   return (
     <div className="wrapper">
       <h1>Application</h1>
