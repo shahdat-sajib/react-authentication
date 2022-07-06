@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Dashboard from './components/Dashboard/Dashboard';
 import Preferences from './components/Preferences/Preferences';
 import Login from './components/Login/Login';
+import useToken from './useToken';
 
 function setToken(userToken) {
   sessionStorage.setItem('token', JSON.stringify(userToken));
@@ -16,9 +17,11 @@ function getToken() {
 
 
 function App() {
+
+  const { token, setToken } = useToken();
   
   //for handle token
-  const token = getToken();
+  // const token = getToken();
 
   //show login component when token exist
   if(!token) {
